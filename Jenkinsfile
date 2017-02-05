@@ -19,7 +19,7 @@ node('swarm') {
    }
    stage('Stage Application') {
       // Run the maven build
-      sh "pwd; ls -l; rancher-compose --url http://139.162.118.183:8080/v1/projects/1a549 --access-key B5AAE7FE856D687A4E86 --secret-key 3syLvkMN3QMXG3chMkuhjEaZMziS9EFFWZCMpPgU --file docker-compose.yaml --project-name swgapi --verbose up -d"
+      sh "pwd; ls -l; rancher-compose --url http://139.162.118.183:8080/v1/projects/1a549 --access-key B5AAE7FE856D687A4E86 --secret-key 3syLvkMN3QMXG3chMkuhjEaZMziS9EFFWZCMpPgU --file docker-compose.yaml --project-name swgapi --verbose up -d --force-upgrade"
    }
    stage('Run load test') {
       // Run the maven build
