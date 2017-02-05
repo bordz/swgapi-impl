@@ -42,6 +42,7 @@
                         <image>
                             <name>${docker.image.prefix}/${project.artifactId}</name>
                             <build>
+                                <dockerFileDir>${project.basedir}</dockerFileDir>
                                 <dockerFile>Dockerfile</dockerFile>
                                 <assembly>
                                     <descriptorRef>artifact</descriptorRef>
