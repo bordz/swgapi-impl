@@ -5,6 +5,11 @@ execution:
   hold-for: 10s
   scenario: simple
 
+reporting:
+- blazemeter
+- final_stats
+- junit-xml
+
 scenarios:
   simple:
     timeout: 500ms
