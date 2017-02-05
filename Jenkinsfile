@@ -24,7 +24,12 @@ node('swarm') {
    stage('Run load test') {
       // Run the maven build
       // sh "TBD"
-      sh "echo '[PLACEHOLDER] Run load test'"
+      // sh "echo '[PLACEHOLDER] Run load test'"
+      withDockerContainer(args: '--rm -v $PWD:/bzt-configs', image: 'undera/taurus') {
+          // some block
+          sh "echo '[PLACEHOLDER] Run load test'"
+      }
+
    }
    stage('Results') {
       // junit '**/target/surefire-reports/TEST-*.xml'
