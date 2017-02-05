@@ -14,7 +14,8 @@ node('swarm') {
    }
    stage('Push Container image') {
       // Run the maven build
-      sh "'${mvnHome}/bin/mvn' -e docker:push"
+      // sh "'${mvnHome}/bin/mvn' -e docker:push"
+      sh "docker push xcoordinate/swgapi:latest"
    }
    stage('Stage Application') {
       // Run the maven build
