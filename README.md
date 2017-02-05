@@ -54,6 +54,9 @@ sudo docker login
 
 # main command
 mvn package docker:build docker:push
+
+# or alternatively
+sudo docker push prefix/artifactId:latest
 ```
 
 ## Production Deploy Procedures
