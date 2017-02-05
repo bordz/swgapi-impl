@@ -23,14 +23,16 @@ node('swarm') {
    }
    stage('Run load test') {
       // Run the maven build
-      // sh "TBD"
-      // sh "echo '[PLACEHOLDER] Run load test'"
-      withDockerContainer(args: '-v ${WORKSPACE}:/bzt-configs', image: 'undera/taurus') {
-          // some block
-          sh "bzt -v /bzt-configs/lt.yml"
-      }
-
+      sh "docker run --rm -v ${WORKSPACE}:/bzt-configs -v ${WORKSPACE}/tau-artifacts:/tmp/artifacts undera/taurus"
    }
+  //  stage('Run load test') {
+  //     // Run the maven build
+  //     withDockerContainer(args: '-v ${WORKSPACE}:/bzt-configs', image: 'undera/taurus') {
+  //         // some block
+  //         sh "bzt -v /bzt-configs/lt.yml"
+  //     }
+   //
+  //  }
    stage('Checking Results') {
       // Run the maven build
       sh "pwd; ls -l"
