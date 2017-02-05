@@ -14,8 +14,7 @@ node('swarm') {
    }
    stage('Push Container image') {
       // Run the maven build
-      // sh "'${mvnHome}/bin/mvn' -e docker:push"
-      sh "echo '[PLACEHOLDER] Push Container image'"
+      sh "'${mvnHome}/bin/mvn' -e docker:push"
    }
    stage('Stage Application') {
       // Run the maven build
@@ -24,9 +23,10 @@ node('swarm') {
    stage('Run load test') {
       // Run the maven build
       // sh "TBD"
+      sh "echo '[PLACEHOLDER] Run load test'"
    }
    stage('Results') {
-      junit '**/target/surefire-reports/TEST-*.xml'
+      // junit '**/target/surefire-reports/TEST-*.xml'
       archive 'target/*.jar'
    }
 }
