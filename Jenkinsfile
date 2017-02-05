@@ -27,8 +27,7 @@ node('swarm') {
       // sh "echo '[PLACEHOLDER] Run load test'"
       withDockerContainer(args: '-v ${WORKSPACE}:/bzt-configs', image: 'undera/taurus') {
           // some block
-          // sh "pwd; ls -l; ls -l /bzt-configs/"
-          // sh "echo '[PLACEHOLDER] Run load test'"
+          sh "bzt /bzt-configs/lt.yml"
       }
 
    }
