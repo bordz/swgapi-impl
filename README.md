@@ -61,5 +61,5 @@ mvn package docker:build docker:push
 should provide proper documentation on how to deploy to production
 
 ## Reference
-docker-maven-plugin documentation https://dmp.fabric8.io/#introduction
-example https://dzone.com/articles/running-spring-boot-in-a-docker-container
+* docker-maven-plugin documentation https://dmp.fabric8.io/#introduction
+* example https://dzone.com/articles/running-spring-boot-in-a-docker-container
