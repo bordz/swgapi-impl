@@ -1,0 +1,11 @@
+version: '2'
+services:
+  swgapi:
+    image: xcoordinate/swgapi:latest
+    stdin_open: true
+    tty: true
+    ports:
+    - 8096:8080/tcp
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: staging=true
