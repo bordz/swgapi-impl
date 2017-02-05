@@ -25,7 +25,7 @@ node('swarm') {
       // Run the maven build
       // sh "TBD"
       // sh "echo '[PLACEHOLDER] Run load test'"
-      withDockerContainer(args: '--rm -v $PWD:/bzt-configs', image: 'undera/taurus') {
+      withDockerContainer(args: '-v $PWD:/bzt-configs', image: 'undera/taurus') {
           // some block
           sh "echo '[PLACEHOLDER] Run load test'"
       }
