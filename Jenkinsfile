@@ -10,7 +10,26 @@ node('swarm') {
    }
    stage('Build App') {
       // Run the maven build
-      sh "'${mvnHome}/bin/mvn' -e -Dmaven.test.failure.ignore clean package docker:build docker:push"
+      sh "'${mvnHome}/bin/mvn' -e -Dmaven.test.failure.ignore clean package"
+   }
+   stage('Build container image') {
+      // Run the maven build
+      // sh "'${mvnHome}/bin/mvn' -e docker:build"
+      sh "echo '[PLACEHOLDER] Build container image'"
+   }
+   stage('Push Container image') {
+      // Run the maven build
+      // sh "'${mvnHome}/bin/mvn' -e docker:push"
+      sh "echo '[PLACEHOLDER] Push Container image'"
+   }
+   stage('Stage Application') {
+      // Run the maven build
+      // sh "'${mvnHome}/bin/mvn' -e docker:build"
+      sh "echo '[PLACEHOLDER] Stage Application'"
+   }
+   stage('Run load test') {
+      // Run the maven build
+      // sh "TBD"
    }
    stage('Results') {
       junit '**/target/surefire-reports/TEST-*.xml'
