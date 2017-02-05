@@ -42,7 +42,7 @@ sudo docker run -p 8080:8080 -d prefix/artifactId
 sudo docker logs prefix/artifactId
 
 # bash into the container
-sudo docker exec -it springframeworkguru/masteringthymeleaf bash
+sudo docker exec -it prefix/artifactId bash
 ```
 
   5) Build and push the image to docker registry
@@ -59,3 +59,7 @@ mvn package docker:build docker:push
 ## Production Deploy Procedures
 
 should provide proper documentation on how to deploy to production
+
+## Reference
+docker-maven-plugin documentation https://dmp.fabric8.io/#introduction
+example https://dzone.com/articles/running-spring-boot-in-a-docker-container
