@@ -2,7 +2,7 @@ node('swarm') {
    def mvnHome
    stage('Preparation') { // for display purposes
       // Get some code from a GitHub repository
-      git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+      git 'https://github.com/bordz/swgapi-impl.git/'
       // Get the Maven tool.
       // ** NOTE: This 'M3' Maven tool must be configured
       // **       in the global configuration.
@@ -14,8 +14,8 @@ node('swarm') {
    }
    stage('Build container image') {
       // Run the maven build
-      // sh "'${mvnHome}/bin/mvn' -e docker:build"
-      sh "echo '[PLACEHOLDER] Build container image'"
+      sh "'${mvnHome}/bin/mvn' -e docker:build"
+      //sh "echo '[PLACEHOLDER] Build container image'"
    }
    stage('Push Container image') {
       // Run the maven build
