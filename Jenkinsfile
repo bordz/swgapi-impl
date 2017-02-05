@@ -10,12 +10,7 @@ node('swarm') {
    }
    stage('Build App') {
       // Run the maven build
-      sh "'${mvnHome}/bin/mvn' -e -Dmaven.test.failure.ignore clean package"
-   }
-   stage('Build container image') {
-      // Run the maven build
-      sh "'${mvnHome}/bin/mvn' -e docker:build"
-      //sh "echo '[PLACEHOLDER] Build container image'"
+      sh "'${mvnHome}/bin/mvn' -e -Dmaven.test.failure.ignore clean package docker:build"
    }
    stage('Push Container image') {
       // Run the maven build
