@@ -38,7 +38,7 @@ node('swarm') {
       sh "pwd; ls -l"
    }
    stage('Results') {
-      // junit '**/target/surefire-reports/TEST-*.xml'
+      junit '**/tau-artifacts/*.xml'
       archive 'target/*.jar'
    }
 }
