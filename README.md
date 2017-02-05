@@ -55,3 +55,7 @@ sudo docker login
 # main command
 mvn package docker:build docker:push
 ```
+
+## Production Deploy Procedures
+
+should provide proper documentation on how to deploy to production
