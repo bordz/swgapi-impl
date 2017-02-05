@@ -7,5 +7,7 @@ execution:
 
 scenarios:
   simple:
+    timeout: 500ms
+    keepalive: true
     requests:
     - http://139.162.125.233:8096/greeting?name=Bart
